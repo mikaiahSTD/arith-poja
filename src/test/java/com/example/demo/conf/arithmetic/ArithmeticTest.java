@@ -1,6 +1,7 @@
 package com.example.demo.conf.arithmetic;
 
-import com.example.demo.endpoint.service.arithmetic.ArithmeticService;
+import com.example.demo.endpoint.
+service.arithmetic.ArithmeticService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -38,8 +39,10 @@ public class ArithmeticTest {
 
     @Test
     public void testArithmeticDivideByZero() {
-        assertThrows(IllegalArgumentException.class, () -> arithmeticService.divide(5, 0));
-        assertThrows(IllegalArgumentException.class, () -> arithmeticService.divide(5, 0));
+        assertThrows(IllegalArgumentException.class, 
+            () -> arithmeticService.divide(5, 0));
+        assertThrows(IllegalArgumentException.class, 
+            () -> arithmeticService.divide(5, 0));
     }
 
     @Test
@@ -51,7 +54,9 @@ public class ArithmeticTest {
 
     @Test
     public void testArithmeticDividePrecision() {
-        assertEquals(0.3333, arithmeticService.divide(1, 3), 0.0001);
+        assertEquals(0.3333, 
+            arithmeticService.divide(1, 3), 
+            0.0001);
     }
 
 }

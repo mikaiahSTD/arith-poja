@@ -1,5 +1,6 @@
 package com.example.demo.endpoint.rest.controller.arithmetic;
-import com.example.demo.endpoint.service.arithmetic.ArithmeticService;
+import com.example.demo.endpoint.service
+.arithmetic.ArithmeticService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
