@@ -1,0 +1,33 @@
+name: Auto Format Google Style
+
+on:
+  push:
+    branches: [ preprod ] # Remplacez par votre branche principale si nécessaire
+  pull_request:
+    branches: [ preprod ]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Permet à l'action de modifier votre code
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Run Google Java Format
+      uses: axel-op/google-java-format-action@v3.8.0
+      with:
+        args: "--replace" # Modifie directement les fichiers non conformes
+
+    - name: Commit changes
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "style: apply Google Java Format"
